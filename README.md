@@ -46,7 +46,7 @@ axios.get(url).then((response) => {
 
 | Type           |           |         |         |         |
 | -------------- | --------- | ------- | ------- | ------- |
-| Primitive Type | number    | boolean | viod    | unefind |
+| Primitive Type | number    | boolean | void    | unefind |
 |                | string    | sumbol  | null    |         |
 | Object Type    | functions | arrays  | classes | objects |
 
