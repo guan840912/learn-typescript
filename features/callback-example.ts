@@ -1,3 +1,4 @@
+// more info https://stackoverflow.com/questions/21687907/typescript-sorting-an-array
 var myArr = [
   {
     num: 5,
