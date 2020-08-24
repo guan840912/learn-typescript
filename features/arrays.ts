@@ -18,3 +18,9 @@ console.log(impDate);
 impDate.push(new Date());
 impDate.push('2020-09-13');
 console.log(impDate);
+
+const greet = (person) => {
+  console.log('Hello, ' + person);
+};
+
+greet('Neil');
