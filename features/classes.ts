@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 class User {
   name: string;
   age: number;
@@ -94,3 +96,14 @@ const consuserOrprivate = new UserConsOrPrivate('NotDefaultUser');
 //console.log(consuserOrprivate.age); // <- can not be call use .
 //console.log(consuserOrprivate.gender); // <- can not be call use .
 console.log(consuserOrprivate);
+
+const nus = [11, 22, 33, 44];
+_.each(nus, function echo(i) {
+  console.log(i);
+});
+
+console.log('--------------------------');
+
+for (let i = 0; i < nus.length; i++) {
+  console.log(nus[i]);
+}
