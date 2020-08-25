@@ -38,3 +38,25 @@ const printVInterface = (valuesObject: IoldCivic): void => {
 };
 
 printVInterface(oldCivic);
+
+interface IFunction {
+  name: string;
+  year: Date;
+  summary(input: string): string;
+}
+
+console.log('======================================');
+
+const ObjectFunction = {
+  name: 'object',
+  year: new Date(),
+  summary(input: string): string {
+    return `This is function name is : ${this.name} , input is ${input}`;
+  },
+};
+
+const Getfunction = (object: IFunction): void => {
+  console.log(object.summary('apple'));
+};
+
+Getfunction(ObjectFunction);
