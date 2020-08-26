@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import { reduce } from 'lodash';
 
 class User {
   name: string;
@@ -107,3 +108,51 @@ console.log('--------------------------');
 for (let i = 0; i < nus.length; i++) {
   console.log(nus[i]);
 }
+
+// uedmy classes .
+class Vehicle {
+  drive(): void {
+    console.log('chugga chugga');
+  }
+  // if use private , only can be use in that class .
+  private honk(): void {
+    console.log('honk ca ca');
+  }
+  startHook(): void {
+    this.honk();
+  }
+}
+
+// extends can help us copy the `function` of `Class Vehicle` to `Class Car`
+class Car extends Vehicle {}
+
+const vehicle = new Vehicle();
+vehicle.drive(); // chugga chugga
+vehicle.startHook(); // honk ca ca
+
+const vehicleextCar = new Car();
+console.log('Car class =============');
+vehicleextCar.startHook();
+
+// Fields with Inheritance 具有繼承的字段
+class oneClass {
+  constructor(public color: string) {
+    this.color = color ?? 'red';
+  }
+  echo(word): void {
+    console.log(word);
+  }
+
+  helloworld() {
+    return 'helloworld';
+  }
+}
+class twoClass extends oneClass {
+  constructor(public wheel: number, public color: string) {
+    super(color);
+    console.log(wheel);
+    console.log(color);
+  }
+}
+
+const echoClass = new twoClass(4, 'yellow');
