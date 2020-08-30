@@ -152,3 +152,36 @@ user.createUser(user);
 ```
 
 ### TypeScript Constructor
+
+```typescript
+class oneClass {
+  constructor(public color: string) {
+    this.color = color ?? 'red';
+  }
+  echo(word): void {
+    console.log(word);
+  }
+
+  helloworld() {
+    return 'helloworld';
+  }
+}
+class twoClass extends oneClass {
+  constructor(public wheel: number, public color: string) {
+    super(color);
+    console.log(wheel);
+    console.log(color);
+  }
+}
+
+const echoClass = new twoClass(4, 'yellow'); // output 4 yellow
+```
+
+### Tool to help us run Typescript in the browser
+
+```bash
+npm i -g parcel-bundler
+
+# run devloper serve
+parcel index.html
+```
