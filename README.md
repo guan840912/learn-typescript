@@ -185,3 +185,14 @@ npm i -g parcel-bundler
 # run devloper serve
 parcel index.html
 ```
+
+### design pattern 1 : google maps .
+
+- user : User.ts
+- company : Company.ts
+- google maps : CustomMap.ts
+
+```bash
+# need npm i parcel-bundler @type/googlemaps  ,  @type/googlemaps -> import via namespaces.
+# know about private , and implements with interface .
+```
