@@ -196,3 +196,112 @@ parcel index.html
 # need npm i parcel-bundler @type/googlemaps  ,  @type/googlemaps -> import via namespaces.
 # know about private , and implements with interface .
 ```
+
+## Configuring the TS Compiler
+
+```bash
+mkdir project
+mkdir project/{src,build}
+
+cd project/
+tsc --init
+
+# uncomment
+vim tsconfig.json
+=======================================================
+...
+"outDir": "./build"
+"rootDir": "./src"
+...
+=======================================================
+
+# create index.ts in src/ dir
+vim src/index.ts
+=======================================================
+console.log("hi here")
+=======================================================
+
+# manual Compiler index.ts
+tsc
+
+dirroot like that .
+tree project
+
+project
+├── build
+│   └── index.js
+├── src
+│   └── index.ts
+└── tsconfig.json
+
+2 directories, 3 files
+
+# auto Compiler *.ts
+tsc -w
+```
+
+## new project
+
+```bash
+# init project
+npm init -y
+
+# install package .
+npm i concurrently nodemon
+
+# add some scripts ~
+vim package.json
+=======================================================
+{
+  "name": "sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
+
+=======================================================
+npm start
+
+下午3:37:05 - File change detected. Starting incremental compilation...
+[start:build]
+[start:build]
+[start:build] 下午3:37:05 - Found 0 errors. Watching for file changes.
+[start:run] [nodemon] restarting due to changes...
+[start:run] [nodemon] starting `node build/index.js`
+[start:run] sort
+[start:run] sss
+[start:run] apple
+[start:run] [nodemon] clean exit - waiting for changes before restart
+
+```
+
+### Tips :
+
+```typescript
+// this class
+class Sorter {
+  collection: number[]
+  constructor(public collection: number[]) {
+    this.collection = collection;
+  }
+  }
+}
+
+// can write like that .
+class Sorter {
+  constructor(public collection: number[]) {}
+  }
+}
+```
