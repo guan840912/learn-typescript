@@ -305,3 +305,19 @@ class Sorter {
   }
 }
 ```
+
+```ts
+// example one class return any type
+class abc{
+  static getid(id: any): any{
+    if(typeof id === "string"){
+      return "1"
+    }else if(typeof id === "number"){
+      return 1
+    }
+  }
+}
+console.log(abc.getid(1));
+console.log(abc.getid("1"));
+
+```
