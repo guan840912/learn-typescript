@@ -321,3 +321,24 @@ console.log(abc.getid(1));
 console.log(abc.getid("1"));
 
 ```
+
+
+### JavaScript Split String Example – How to Split a String into an Array in JS
+source: https://www.freecodecamp.org/news/javascript-split-string-example/
+```ts
+const morse = '-.-. --- -.. .'
+// (1)
+const morseToChar = {
+  '-.-.': 'c',
+  '-..': 'd',
+  '.': 'e',
+  '---': 'o',
+}
+
+const morseArray = morse.split(' ');
+const textArray = morseArray.map((char) => morseToChar[char]);
+const text = textArray.join('"')
+console.log(text)
+const publisher = 'free code camp'
+console.log(publisher.split(' ', 1)) // [ 'free' ]
+```
