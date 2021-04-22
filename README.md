@@ -342,3 +342,19 @@ console.log(text)
 const publisher = 'free code camp'
 console.log(publisher.split(' ', 1)) // [ 'free' ]
 ```
+
+### Example for 
+```ts
+const events = {
+  Name: 'test',
+  Para: {
+    Id: 1,
+  }
+
+}
+console.log('Event: %j', events)
+// Event: {"Name":"test","Para":{"Id":1}}
+
+console.log('Event: %s', events)
+// Event: { Name: 'test', Para: [Object] }
+```
